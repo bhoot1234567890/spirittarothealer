@@ -484,15 +484,12 @@ button:focus:not(:focus-visible) {
     color: #FFB300;
 }
 
-.faq-question::after {
-    content: '+';
-    font-size: 1.5rem;
-    color: #FFB300;
+.faq-question .material-symbols-outlined {
     transition: transform 0.3s ease;
 }
 
-.faq-item.active .faq-question::after {
-    transform: rotate(45deg);
+.faq-item.active .faq-question .material-symbols-outlined {
+    transform: rotate(180deg);
 }
 
 .faq-answer {
