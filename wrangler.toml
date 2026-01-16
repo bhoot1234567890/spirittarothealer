@@ -1,0 +1,15 @@
+# Cloudflare Pages Configuration
+# Spirit Tarot Healer Website
+
+name = "spirit-tarot-healer"
+compatibility_date = "2024-01-01"
+
+# Pages configuration
+pages_build_output_dir = ""
+
+# Environment variables (optional)
+# [env.production]
+# vars = { ENVIRONMENT = "production" }
+
+# [env.preview]
+# vars = { ENVIRONMENT = "preview" }
