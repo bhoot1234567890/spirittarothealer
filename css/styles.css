@@ -279,6 +279,39 @@ button:focus:not(:focus-visible) {
     outline: none;
 }
 
+/* WCAG AA Color Contrast Improvements */
+/* Ensure text on dark backgrounds meets 4.5:1 contrast ratio */
+.text-parchment {
+    color: #FEF08A !important;
+}
+
+.text-parchment\/80 {
+    color: #FDE047 !important; /* Darker shade for better contrast */
+}
+
+.text-parchment\/70 {
+    color: #FACC15 !important; /* Even darker for better contrast */
+}
+
+.text-parchment\/60 {
+    color: #EAB308 !important; /* Darker for hover states */
+}
+
+/* Ensure gold text on dark backgrounds is readable */
+.text-gold {
+    color: #FBBF24 !important;
+}
+
+/* Improve button text contrast */
+.btn-ornate {
+    color: #1A0F0A !important; /* Dark text on bright background */
+}
+
+/* Better contrast for service cards */
+.pothi-card {
+    color: #1A0F0A;
+}
+
 /* Skip navigation link for accessibility */
 .skip-to-content {
     position: absolute;
@@ -525,4 +558,144 @@ button:focus:not(:focus-visible) {
     .tarot-card-display:hover {
         transform: none;
     }
+}
+
+/* ===================================
+   Micro-Interactions & Animations
+=================================== */
+
+/* Button Ripple Effect */
+.btn-ornate {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ornate::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ornate:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Smooth Color Transitions */
+a,
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Hover States */
+.pothi-card:focus-visible,
+.tarot-card-display:focus-visible,
+.btn-ornate:focus-visible {
+    outline: 3px solid #FFB300;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 6px rgba(255, 179, 0, 0.2);
+}
+
+/* Loading State for Buttons */
+.btn-ornate.loading {
+    pointer-events: none;
+    opacity: 0.7;
+    position: relative;
+    color: transparent;
+}
+
+.btn-ornate.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #1A0F0A;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success Toast Animation */
+.toast {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    background: linear-gradient(135deg, #4B0000, #1A0F0A);
+    border: 2px solid #FFB300;
+    border-radius: 0.75rem;
+    padding: 16px 24px;
+    color: #FEF08A;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateX(400px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast-success {
+    border-color: #10B981;
+}
+
+.toast-success::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #10B981;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Enhanced Input Focus States */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #FFB300;
+    box-shadow: 0 0 0 3px rgba(255, 179, 0, 0.2);
+}
+
+/* Smooth Scroll Behavior Enhancement */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Skip to Content Enhancement */
+.skip-to-content:focus {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
 }

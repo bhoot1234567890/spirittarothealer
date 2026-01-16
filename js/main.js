@@ -322,6 +322,151 @@ class Analytics {
 }
 
 // ===================================
+// Accessibility Enhancements
+// ===================================
+
+class AccessibilityEnhancements {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.ensureTouchTargets();
+        this.addAriaLabels();
+        this.handleKeyboardNavigation();
+    }
+
+    // Ensure touch targets meet WCAG 2.5.5 (44x44px minimum)
+    ensureTouchTargets() {
+        const interactiveElements = document.querySelectorAll('a, button, .btn-ornate');
+
+        interactiveElements.forEach(element => {
+            const computedStyle = window.getComputedStyle(element);
+            const width = parseFloat(computedStyle.width);
+            const height = parseFloat(computedStyle.height);
+
+            // Add padding to small elements
+            if (width < 44 || height < 44) {
+                element.style.minWidth = '44px';
+                element.style.minHeight = '44px';
+                element.style.display = 'inline-flex';
+                element.style.alignItems = 'center';
+                element.style.justifyContent = 'center';
+            }
+        });
+    }
+
+    // Add ARIA labels to icon-only buttons
+    addAriaLabels() {
+        const iconButtons = document.querySelectorAll('button:not([aria-label]):not(.faq-question)');
+
+        iconButtons.forEach(button => {
+            const icon = button.querySelector('.material-symbols-outlined');
+            const text = button.textContent.trim();
+
+            if (icon && !text) {
+                const iconName = icon.textContent;
+                // Generate label from icon name
+                const label = this.iconToLabel(iconName);
+                if (label) {
+                    button.setAttribute('aria-label', label);
+                }
+            }
+        });
+    }
+
+    // Convert Material Symbols icon names to readable labels
+    iconToLabel(iconName) {
+        const labels = {
+            'close': 'Close menu',
+            'menu_book': 'Open menu',
+            'auto_awesome': 'Spirit Tarot Healer',
+            'favorite': 'Love',
+            'phone_in_talk': 'Phone call',
+            'mail': 'Email',
+            'touch_app': 'Tap to select',
+            'visibility': 'View',
+            'spa': 'Healing',
+            'lock': 'Secure',
+            'notifications_active': 'Notifications',
+            'verified': 'Verified',
+            'person': 'About reader',
+            'help': 'Help',
+            'expand_more': 'Expand',
+            'format_quote': 'Quote',
+            'star': 'Star',
+            'moon_stars': 'Moon and stars',
+            'sunny': 'Sun',
+            'schedule': 'Schedule',
+            'radio_button_checked': 'Selected',
+            'radio_button_unchecked': 'Not selected',
+            'mark_email_unread': 'Email',
+            'psychology': 'Psychology'
+        };
+
+        return labels[iconName] || null;
+    }
+
+    // Enhanced keyboard navigation
+    handleKeyboardNavigation() {
+        // Add keyboard handlers for custom interactive elements
+        document.querySelectorAll('.pothi-card, .tarot-card-display').forEach(card => {
+            if (!card.getAttribute('tabindex')) {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+            }
+
+            // Handle Enter and Space keys
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+        });
+    }
+}
+
+// ===================================
+// Toast Notifications
+// ===================================
+
+class ToastNotification {
+    constructor() {
+        this.toast = null;
+        this.timeout = null;
+    }
+
+    show(message, type = 'success') {
+        // Create toast element if it doesn't exist
+        if (!this.toast) {
+            this.toast = document.createElement('div');
+            this.toast.className = `toast toast-${type}`;
+            document.body.appendChild(this.toast);
+        }
+
+        this.toast.textContent = message;
+        this.toast.classList.add('show');
+
+        // Clear existing timeout
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+        }
+
+        // Auto-hide after 4 seconds
+        this.timeout = setTimeout(() => {
+            this.hide();
+        }, 4000);
+    }
+
+    hide() {
+        if (this.toast) {
+            this.toast.classList.remove('show');
+        }
+    }
+}
+
+// ===================================
 // Initialize Application
 // ===================================
 
@@ -346,10 +491,14 @@ class App {
         this.components.push(new ScrollAnimations());
         this.components.push(new ScrollProgress());
         this.components.push(new FAQAccordion());
+        this.components.push(new AccessibilityEnhancements());
 
         // Uncomment if needed
         // this.components.push(new FormHandlers());
         // this.components.push(new Analytics());
+
+        // Make ToastNotification globally available
+        window.toast = new ToastNotification();
 
         console.log('Spirit Tarot Healer - Initialized');
     }
