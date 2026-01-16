@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Spirit Tarot Healer | Tarot. Guidance. Healing.</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D4A574",
+                        "primary-dark": "#B8956E",
+                        accent: "#9B7CB5",
+                        "accent-dark": "#7D5A8A",
+                        blush: "#F5E6E0",
+                        "blush-dark": "#E8D5CD",
+                        charcoal: "#2D2D2D",
+                        "charcoal-light": "#3D3D3D",
+                        cream: "#FDF8F3",
+                        "cream-dark": "#F5EDE4",
+                    },
+                    fontFamily: {
+                        display: ["'Cormorant Garamond'", "serif"],
+                        decorative: ["'Cinzel'", "serif"],
+                        body: ["'Crimson Text'", "serif"],
+                        script: ["'Great Vibes'", "cursive"],
+                    },
+                    backgroundImage: {
+                        'watercolor-gradient': "linear-gradient(135deg, rgba(245, 230, 224, 0.9) 0%, rgba(253, 248, 243, 0.95) 50%, rgba(245, 230, 224, 0.9) 100%)",
+                        'card-gradient': "linear-gradient(180deg, rgba(253, 248, 243, 0.98) 0%, rgba(245, 237, 228, 0.95) 100%)",
+                    },
+                    boxShadow: {
+                        'soft-glow': '0 0 30px rgba(212, 165, 116, 0.3)',
+                        'accent-glow': '0 0 25px rgba(155, 124, 181, 0.25)',
+                        'card-shadow': '0 20px 60px rgba(45, 45, 45, 0.15)',
+                        'card-hover': '0 30px 80px rgba(45, 45, 45, 0.2)',
+                    }
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #FDF8F3; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#B8956E, #D4A574, #B8956E); border-radius: 5px; }
+
+        .watercolor-texture {
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(155, 124, 181, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(245, 230, 224, 0.2) 0%, transparent 40%);
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #D4A574 0%, #C9A86C 50%, #D4A574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-card {
+            background: linear-gradient(180deg, rgba(253, 248, 243, 0.95) 0%, rgba(245, 237, 228, 0.9) 100%);
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            position: relative;
+            box-shadow: 0 20px 60px rgba(45, 45, 45, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, transparent 50%, rgba(155, 124, 181, 0.08) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 35px 90px rgba(45, 45, 45, 0.18);
+            border-color: rgba(212, 165, 116, 0.5);
+        }
+
+        .ornate-border {
+            position: relative;
+            border: 3px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #D4A574, #9B7CB5, #D4A574) border-box;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D4A574 0%, #B8956E 100%);
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.35);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(212, 165, 116, 0.45);
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .star-decoration {
+            position: relative;
+        }
+
+        .star-decoration::before,
+        .star-decoration::after {
+            content: '✦';
+            position: absolute;
+            color: #D4A574;
+            opacity: 0.6;
+        }
+
+        .star-decoration::before {
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .star-decoration::after {
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .step-card {
+            background: rgba(253, 248, 243, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(212, 165, 116, 0.25);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .step-card:hover {
+            transform: scale(1.03);
+            border-color: rgba(212, 165, 116, 0.5);
+            box-shadow: 0 20px 50px rgba(45, 45, 45, 0.15);
+        }
+
+        .tarot-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #D4A574 0%, #9B7CB5 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4A574, transparent);
+        }
+    </style>
+</head>
+<body class="bg-cream font-body text-charcoal antialiased min-h-screen flex flex-col watercolor-texture">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md shadow-lg border-b border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center space-x-3 cursor-pointer group">
+                    <div class="relative w-12 h-12">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full opacity-20"></div>
+                        <div class="absolute inset-1 bg-white rounded-full flex items-center justify-center border-2 border-primary shadow-soft-glow">
+                            <span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-xl tracking-wide text-charcoal">Spirit Tarot</h1>
+                        <span class="font-decorative text-[10px] tracking-[0.3em] text-primary font-semibold block uppercase">Healer</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a class="text-charcoal/70 hover:text-primary transition-colors font-display font-semibold text-base" href="#home">Home</a>
+                    <a class="text-primary font-bold transition-colors font-display text-base" href="#services">Services</a>
+                    <a class="text-charcoal/70 hover:text-primary transition-colors font-display font-semibold text-base" href="#about">About</a>
+                    <a class="btn-primary px-6 py-2.5 rounded-full text-sm tracking-wide" href="#contact">Book Reading</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-primary hover:text-accent transition-colors">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 overflow-hidden" id="home">
+        <div class="absolute inset-0 watercolor-gradient opacity-50"></div>
+        <div class="absolute top-20 right-20 w-72 h-72 bg-primary rounded-full blur-[100px] opacity-20 floating-element"></div>
+        <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent rounded-full blur-[100px] opacity-15 floating-element" style="animation-delay: -3s;"></div>
+
+        <!-- Decorative Elements -->
+        <span class="absolute top-16 right-16 text-6xl text-primary/20">☽</span>
+        <span class="absolute bottom-20 left-16 text-5xl text-accent/20">☀</span>
+        <span class="absolute top-1/3 left-10 text-4xl text-primary/15">✧</span>
+        <span class="absolute bottom-1/3 right-10 text-4xl text-accent/15">✧</span>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center justify-center gap-4 mb-8">
+                <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-primary"></div>
+                <span class="material-symbols-outlined text-5xl text-primary">self_improvement</span>
+                <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-primary"></div>
+            </div>
+
+            <h2 class="font-script text-6xl md:text-8xl font-normal text-accent mb-4 leading-tight">
+                Spirit Tarot Healer
+            </h2>
+
+            <div class="flex justify-center items-center space-x-4 mb-10">
+                <span class="text-primary text-2xl">✦</span>
+                <p class="font-decorative text-sm md:text-base tracking-[0.4em] text-charcoal/80 font-semibold uppercase">
+                    Tarot. Guidance. Healing.
+                </p>
+                <span class="text-primary text-2xl">✦</span>
+            </div>
+
+            <div class="relative max-w-3xl mx-auto mb-12">
+                <p class="text-xl md:text-2xl text-charcoal/80 font-display font-medium leading-relaxed">
+                    Discover clarity, healing, and spiritual guidance through the ancient wisdom of tarot cards.
+                    Let the cards illuminate your path and unlock the answers within.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a class="btn-primary px-10 py-4 rounded-full text-base tracking-wide shadow-lg" href="#services">
+                    Explore Services
+                </a>
+                <a class="px-10 py-4 rounded-full text-base font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" href="#contact">
+                    Book a Reading
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center p-8">
+                    <div class="tarot-icon mx-auto mb-6">
+                        <span class="material-symbols-outlined text-white text-4xl">lock</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-charcoal mb-3">Confidential</h3>
+                    <p class="text-charcoal/70 text-lg leading-relaxed">Your readings are completely private. We honor the sacred trust between reader and seeker.</p>
+                </div>
+                <div class="text-center p-8">
+                    <div class="tarot-icon mx-auto mb-6">
+                        <span class="material-symbols-outlined text-white text-4xl">psychology</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-charcoal mb-3">Intuitive Guidance</h3>
+                    <p class="text-charcoal/70 text-lg leading-relaxed">Deep insights rooted in tarot wisdom and intuitive interpretation tailored to your journey.</p>
+                </div>
+                <div class="text-center p-8">
+                    <div class="tarot-icon mx-auto mb-6">
+                        <span class="material-symbols-outlined text-white text-4xl">favorite</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-charcoal mb-3">Healing Focus</h3>
+                    <p class="text-charcoal/70 text-lg leading-relaxed">Every reading includes guidance and remedies to support your emotional and spiritual healing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-cream to-white/60" id="services">
+        <div class="absolute inset-0 watercolor-texture opacity-30 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20">
+                <span class="block font-decorative text-primary tracking-[0.4em] text-sm font-bold mb-4 uppercase">Offerings</span>
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-charcoal mb-6">Reading Services</h2>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="h-[2px] w-20 bg-gradient-to-r from-transparent to-primary"></div>
+                    <span class="material-symbols-outlined text-3xl text-accent">auto_awesome</span>
+                    <div class="h-[2px] w-20 bg-gradient-to-l from-transparent to-primary"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <!-- Service 1 -->
+                <div class="service-card rounded-3xl p-8">
+                    <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center shadow-lg">
+                            <span class="material-symbols-outlined text-white text-3xl">visibility</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8 mb-8 pb-6 border-b border-primary/20">
+                        <h3 class="text-3xl font-display font-bold text-charcoal mb-2">3 Questions Reading</h3>
+                        <span class="block text-sm font-decorative text-primary font-semibold tracking-wider uppercase">Focused Guidance</span>
+                    </div>
+                    <p class="text-charcoal/80 text-lg leading-relaxed mb-8 text-center">
+                        Get clear answers to 3 specific questions troubling you. Perfect for when you need focused guidance on particular areas of your life.
+                    </p>
+                    <div class="bg-cream/80 p-4 rounded-xl mb-8">
+                        <div class="flex justify-center items-center gap-8 text-charcoal/70">
+                            <span class="flex items-center gap-2 text-base font-medium">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 20-30 Mins
+                            </span>
+                            <span class="flex items-center gap-2 text-base font-medium">
+                                <span class="material-symbols-outlined text-lg">phone</span> Live Call
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="text-left">
+                            <span class="block text-xs text-primary font-semibold uppercase tracking-wider">Investment</span>
+                            <span class="font-display text-3xl font-bold text-charcoal">₹799</span>
+                        </div>
+                        <a class="btn-primary px-8 py-3 rounded-full text-base font-semibold" href="#contact">Select</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card rounded-3xl p-8">
+                    <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center shadow-lg">
+                            <span class="material-symbols-outlined text-white text-3xl">deck</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8 mb-8 pb-6 border-b border-primary/20">
+                        <h3 class="text-3xl font-display font-bold text-charcoal mb-2">Full Spread</h3>
+                        <span class="block text-sm font-decorative text-primary font-semibold tracking-wider uppercase">Complete Overview</span>
+                    </div>
+                    <p class="text-charcoal/80 text-lg leading-relaxed mb-8 text-center">
+                        A comprehensive reading covering all aspects of your life. One spread addresses multiple questions and provides holistic guidance.
+                    </p>
+                    <div class="bg-cream/80 p-4 rounded-xl mb-8">
+                        <div class="flex justify-center items-center gap-8 text-charcoal/70">
+                            <span class="flex items-center gap-2 text-base font-medium">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 45-60 Mins
+                            </span>
+                            <span class="flex items-center gap-2 text-base font-medium">
+                                <span class="material-symbols-outlined text-lg">phone</span> Live Call
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="text-left">
+                            <span class="block text-xs text-primary font-semibold uppercase tracking-wider">Investment</span>
+                            <span class="font-display text-3xl font-bold text-charcoal">₹1499</span>
+                        </div>
+                        <a class="btn-primary px-8 py-3 rounded-full text-base font-semibold" href="#contact">Select</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Book Section -->
+    <section class="py-24 bg-white/70 relative overflow-hidden" id="contact">
+        <div class="absolute -left-32 top-20 w-80 h-80 bg-primary rounded-full blur-[120px] opacity-15"></div>
+        <div class="absolute -right-32 bottom-20 w-80 h-80 bg-accent rounded-full blur-[120px] opacity-15"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-charcoal mb-6">How to Book</h2>
+                <p class="text-xl text-charcoal/70 max-w-2xl mx-auto">Your journey to clarity begins with these simple steps</p>
+                <div class="flex items-center justify-center mt-6">
+                    <span class="text-4xl text-primary">✦</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <!-- Step 1 -->
+                <div class="step-card rounded-2xl p-8 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+                    <div class="mb-6 mt-4">
+                        <span class="material-symbols-outlined text-5xl text-primary">touch_app</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-charcoal mb-3">Choose Your Service</h3>
+                    <p class="text-charcoal/70 text-lg leading-relaxed">Select the reading type that resonates with your current needs and questions.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card rounded-2xl p-8 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+                    <div class="mb-6 mt-4">
+                        <span class="material-symbols-outlined text-5xl text-primary">mail</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-charcoal mb-3">Connect With Us</h3>
+                    <p class="text-charcoal/70 text-lg leading-relaxed">Send a DM on Instagram or email us. We'll find a suitable time slot for your reading.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card rounded-2xl p-8 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+                    <div class="mb-6 mt-4">
+                        <span class="material-symbols-outlined text-5xl text-primary">phone_in_talk</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-charcoal mb-3">Receive Your Reading</h3>
+                    <p class="text-charcoal/70 text-lg leading-relaxed">Your session happens via call or voice notes. Payment is made after your reading.</p>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="max-w-3xl mx-auto">
+                <div class="ornate-border rounded-3xl p-12 text-center bg-white/90 backdrop-blur-sm">
+                    <h3 class="font-display text-3xl font-bold text-charcoal mb-8">Ready to Begin Your Journey?</h3>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                        <a class="flex items-center group bg-gradient-to-r from-primary to-primary-dark px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300" href="https://instagram.com/mindofwallflower" target="_blank">
+                            <span class="text-3xl mr-3">📸</span>
+                            <div class="text-left">
+                                <span class="block text-xs uppercase tracking-wider text-white/80 font-semibold">Instagram</span>
+                                <span class="font-bold text-lg text-white">@mindofwallflower</span>
+                            </div>
+                        </a>
+                        <a class="flex items-center group bg-gradient-to-r from-accent to-accent-dark px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300" href="mailto:idhruvabhatt@gmail.com">
+                            <span class="material-symbols-outlined text-3xl text-white mr-3">email</span>
+                            <div class="text-left">
+                                <span class="block text-xs uppercase tracking-wider text-white/80 font-semibold">Email</span>
+                                <span class="font-bold text-lg text-white">idhruvabhatt@gmail.com</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="text-charcoal/60 text-base mt-8 italic">Payment is accepted after your session - no upfront cost required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Tarot Section -->
+    <section class="py-24 bg-gradient-to-b from-white/60 to-cream" id="about">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="block font-decorative text-accent tracking-[0.4em] text-sm font-bold mb-4 uppercase">About Tarot</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-charcoal mb-8">Ancient Wisdom for Modern Lives</h2>
+                    <p class="text-lg text-charcoal/70 leading-relaxed mb-6">
+                        Tarot cards are a powerful tool for self-reflection and guidance. Each card carries symbolic imagery that speaks to our subconscious, helping us uncover truths about ourselves and our path forward.
+                    </p>
+                    <p class="text-lg text-charcoal/70 leading-relaxed mb-8">
+                        Whether you're seeking clarity on relationships, career decisions, or spiritual growth, tarot offers a mirror to your soul and a compass for your journey.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl text-primary">auto_awesome</span>
+                        </div>
+                        <div>
+                            <span class="block text-sm text-primary font-semibold uppercase tracking-wider">Our Approach</span>
+                            <span class="text-charcoal font-medium">Compassionate, Intuitive, Healing-Focused</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="aspect-square bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="text-8xl mb-4 block">🔮</span>
+                            <p class="font-display text-2xl text-charcoal/60 italic">"The cards reveal what you already know deep within"</p>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-accent/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -top-8 -left-8 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-cream py-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="flex justify-center mb-8">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center shadow-2xl">
+                    <span class="material-symbols-outlined text-white text-4xl">self_improvement</span>
+                </div>
+            </div>
+
+            <h2 class="font-display font-bold text-3xl tracking-wider text-primary mb-4">SPIRIT TAROT HEALER</h2>
+            <p class="font-decorative text-sm tracking-[0.3em] text-cream/60 mb-8 uppercase">Tarot. Guidance. Healing.</p>
+
+            <div class="flex justify-center items-center gap-8 mb-10">
+                <a href="https://instagram.com/mindofwallflower" target="_blank" class="w-12 h-12 bg-cream/10 rounded-full flex items-center justify-center hover:bg-primary/30 transition-all">
+                    <span class="text-2xl">📸</span>
+                </a>
+                <a href="mailto:idhruvabhatt@gmail.com" class="w-12 h-12 bg-cream/10 rounded-full flex items-center justify-center hover:bg-primary/30 transition-all">
+                    <span class="material-symbols-outlined text-2xl">email</span>
+                </a>
+            </div>
+
+            <div class="w-32 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-8"></div>
+
+            <p class="text-cream/40 text-sm">
+                © 2026 Spirit Tarot Healer. All rights reserved.
+            </p>
+            <p class="text-cream/30 text-xs mt-2">
+                "The universe speaks through those who listen with their heart"
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

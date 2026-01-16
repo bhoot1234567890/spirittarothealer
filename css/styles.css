@@ -1,0 +1,528 @@
+/* ===================================
+   Spirit Tarot Healer - Custom Styles
+   Deep Night Temple Theme
+=================================== */
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1A0F0A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#D97706, #FFB300, #D97706);
+    border: 2px solid #1A0F0A;
+}
+
+/* Madhubani Border Pattern */
+.madhubani-border {
+    background-color: transparent;
+    background-image:
+        linear-gradient(90deg, transparent 50%, rgba(255, 0, 0, 0.1) 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 179, 0, 0.1) 20%, transparent 20%);
+    background-size: 20px 20px, 40px 40px;
+}
+
+/* Brass Metallic Text Effect */
+.text-brass-metallic {
+    background: linear-gradient(to bottom, #fcd34d 0%, #fbbf24 22%, #d97706 50%, #92400e 78%, #fcd34d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Pothi Card - Traditional Manuscript Style */
+.pothi-card {
+    background-color: #FEF08A;
+    border: 6px solid transparent;
+    border-image: linear-gradient(to right, #D97706, #FFB300, #D97706) 1;
+    border-radius: 0.75rem;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 179, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pothi-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 179, 0, 0.4);
+}
+
+.pothi-inner {
+    border: 2px dashed #4B0000;
+    border-radius: 0.5rem;
+    margin: 4px;
+    height: calc(100% - 8px);
+    background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+/* Gemstone Decorations */
+.gemstone {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 6px rgba(0, 0, 0, 0.5),
+                0 0 10px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.gem-ruby {
+    background: radial-gradient(circle at 30% 30%, #FF0000, #4B0000);
+}
+
+.gem-emerald {
+    background: radial-gradient(circle at 30% 30%, #10B981, #064E3B);
+}
+
+.gem-sapphire {
+    background: radial-gradient(circle at 30% 30%, #3B82F6, #1E3A8A);
+}
+
+/* Ornate Button Styling */
+.btn-ornate {
+    background: linear-gradient(180deg, #FFB300 0%, #D97706 100%);
+    border: 2px solid #1A0F0A;
+    color: #1A0F0A;
+    text-transform: uppercase;
+    font-weight: 900;
+    box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ornate:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(255, 179, 0, 0.6);
+}
+
+/* Drop Cap Styling for Traditional Text */
+.drop-cap::first-letter {
+    font-family: 'Eczar', serif;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    float: left;
+    margin-right: 0.6rem;
+    margin-top: 0.2rem;
+    color: #FF0000;
+    text-shadow: 2px 2px 0 #D97706;
+    font-weight: 800;
+}
+
+/* Lata Vine - Traditional Decorative Line */
+.lata-vine {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #FFB300 50%, transparent 50%);
+    background-size: 4px 20px;
+}
+
+/* ===================================
+   Tarot Card Styles
+=================================== */
+
+/* Floating Tarot Card Display */
+.tarot-card-display {
+    width: 120px;
+    height: 180px;
+    background: linear-gradient(135deg, #FEF08A 0%, #FFB300 50%, #D97706 100%);
+    border: 3px solid #FF0000;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarot-card-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+}
+
+.tarot-card-display:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(255, 179, 0, 0.4);
+}
+
+/* Floating Animation for Cards */
+.floating-cards {
+    animation: floatCards 8s ease-in-out infinite;
+}
+
+@keyframes floatCards {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+    75% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+/* Angel Wing Decoration */
+.angel-wing {
+    position: relative;
+}
+
+.angel-wing::before,
+.angel-wing::after {
+    content: '🪽';
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.3;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.angel-wing::before {
+    left: -40px;
+}
+
+.angel-wing::after {
+    right: -40px;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+/* Heart Glow Effect */
+.heart-glow {
+    position: relative;
+}
+
+.heart-glow::after {
+    content: '💜';
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.15;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.25;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* ===================================
+   Responsive Adjustments
+=================================== */
+
+@media (max-width: 768px) {
+    .pothi-card {
+        margin-bottom: 1rem;
+    }
+
+    .tarot-card-display {
+        width: 100px;
+        height: 150px;
+    }
+
+    .angel-wing::before,
+    .angel-wing::after {
+        display: none;
+    }
+}
+
+/* ===================================
+   Utility Classes
+=================================== */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+    background-color: #FFB300;
+    color: #1A0F0A;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus,
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #FFB300;
+    outline-offset: 3px;
+}
+
+/* Focus visible only for keyboard users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Skip navigation link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #FFB300;
+    color: #1A0F0A;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* ===================================
+   Quality of Life Improvements
+=================================== */
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF0000, #FFB300);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Email Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #FFB300, #D97706);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(255, 179, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #1A0F0A;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(255, 179, 0, 0.6);
+}
+
+.whatsapp-float:active {
+    transform: scale(0.95);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: #1A0F0A;
+}
+
+/* Card Flip Animation */
+.tarot-card-flip {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+}
+
+.tarot-card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.tarot-card-flip:hover .tarot-card-flip-inner,
+.tarot-card-flip:focus .tarot-card-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.tarot-card-front,
+.tarot-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.tarot-card-front {
+    background: linear-gradient(135deg, #FEF08A 0%, #FFB300 50%, #D97706 100%);
+    border: 3px solid #FF0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tarot-card-back {
+    background: linear-gradient(135deg, #4B0000 0%, #1A0F0A 100%);
+    border: 3px solid #FFB300;
+    color: #FEF08A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transform: rotateY(180deg);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background: linear-gradient(135deg, #FEF08A 0%, #FDE68A 100%);
+    border: 3px solid #FFB300;
+    border-radius: 1rem;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 4rem;
+    color: #FFB300;
+    opacity: 0.3;
+    font-family: Georgia, serif;
+}
+
+.testimonial-stars {
+    color: #FFB300;
+    margin-bottom: 12px;
+}
+
+/* FAQ Accordion */
+.faq-item {
+    background: rgba(254, 240, 138, 0.1);
+    border: 2px solid rgba(255, 179, 0, 0.3);
+    border-radius: 0.75rem;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(255, 179, 0, 0.5);
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #FEF08A;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #FFB300;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: #FFB300;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 20px;
+    color: #FEF08A;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 20px 20px;
+}
+
+/* Loading Skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #FEF08A 25%, #FDE68A 50%, #FEF08A 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 0.5rem;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Urgency Badge */
+.urgency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+}
+
+/* Better touch targets for mobile */
+@media (hover: none) {
+    .pothi-card:hover {
+        transform: none;
+    }
+
+    .tarot-card-display:hover {
+        transform: none;
+    }
+}

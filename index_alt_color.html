@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Muted Whimsical Dreamscape | Spirit Tarot Healer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Eczar:wght@400;500;600;700;800&amp;family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#B8A77E", // Antique Gold
+                        "primary-dark": "#8E7F5E", // Deep Antique Gold
+                        vermillion: "#8E44AD", // Desaturated Plum
+                        ochre: "#F9D3B4", // Pale Peach
+                        terracotta: "#6C3483", // Dusty Lavender
+                        night: "#2C3E50", // Twilight Blue-Grey
+                        "deep-maroon": "#1E2B37", // Deep Twilight Shadow
+                        "parchment": "#F0EAD6", // Creamy Off-White
+                        "parchment-dark": "#E8DFC5", // Antique Paper
+                    },
+                    fontFamily: {
+                        display: ["'Eczar'", "serif"],
+                        decorative: ["'Cinzel'", "serif"],
+                        body: ["'Crimson Text'", "serif"],
+                        script: ["'Great Vibes'", "cursive"],
+                    },
+                    backgroundImage: {
+                        'mandala-pattern': "url('https://www.transparenttextures.com/patterns/black-scales.png')",
+                        'paper-texture': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+                        'brass-gradient': "linear-gradient(135deg, #B8A77E 0%, #8E7F5E 50%, #B8A77E 100%)",
+                    },
+                    boxShadow: {
+                        'brass-glow': '0 0 20px rgba(184, 167, 126, 0.4)',
+                        'red-glow': '0 0 20px rgba(142, 68, 173, 0.3)',
+                        'gem-glow': 'inset 0 0 8px rgba(255,255,255,0.6), 0 2px 10px rgba(0,0,0,0.8)',
+                    }
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #2C3E50; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#8E7F5E, #B8A77E, #8E7F5E); border: 2px solid #2C3E50; }
+        .madhubani-border {
+            background-color: transparent;
+            background-image: 
+                linear-gradient(90deg, transparent 50%, rgba(142, 68, 173, 0.1) 50%),
+                radial-gradient(circle at 50% 50%, rgba(184, 167, 126, 0.1) 20%, transparent 20%);
+            background-size: 20px 20px, 40px 40px;
+        }
+        .text-brass-metallic {
+            background: linear-gradient(to bottom, #F9D3B4 0%, #B8A77E 22%, #8E7F5E 50%, #5D5440 78%, #F9D3B4 100%); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pothi-card {
+            background-color: #F0EAD6; border: 6px solid transparent;
+            border-image: linear-gradient(to right, #8E7F5E, #B8A77E, #8E7F5E) 1;
+            position: relative;
+            box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(184, 167, 126, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pothi-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px -5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(184, 167, 126, 0.3);
+        }
+        .pothi-inner {
+            border: 2px dashed #6C3483;
+            margin: 4px;
+            height: calc(100% - 8px);
+            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        }
+        .gemstone {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            box-shadow: inset 2px 2px 4px rgba(255,255,255,0.6), inset -2px -2px 6px rgba(0,0,0,0.6), 0 0 10px rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .gem-ruby { background: radial-gradient(circle at 30% 30%, #8E44AD, #4A235A); }
+        .gem-emerald { background: radial-gradient(circle at 30% 30%, #48C9B0, #117A65); }
+        .gem-sapphire { background: radial-gradient(circle at 30% 30%, #5499C7, #21618C); }
+        .btn-ornate {
+            background: linear-gradient(180deg, #B8A77E 0%, #8E7F5E 100%);
+            border: 2px solid #2C3E50;
+            color: #2C3E50;
+            text-transform: uppercase;
+            font-weight: 900;
+            box-shadow: 0 4px 15px rgba(184, 167, 126, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-ornate:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 6px 20px rgba(184, 167, 126, 0.5);
+        }
+        .drop-cap::first-letter {
+            font-family: 'Eczar', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin-right: 0.6rem;
+            margin-top: 0.2rem;
+            color: #8E44AD;
+            text-shadow: 2px 2px 0 #B8A77E;
+            font-weight: 800;
+        }
+        .lata-vine {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-image: linear-gradient(to bottom, #B8A77E 50%, transparent 50%);
+            background-size: 4px 20px;
+        }
+    </style>
+</head>
+<body class="bg-night font-body text-parchment antialiased min-h-screen flex flex-col madhubani-border relative">
+<div class="fixed top-0 left-0 w-full h-2 z-[60] bg-gradient-to-r from-vermillion via-primary to-vermillion shadow-red-glow"></div>
+<div class="fixed bottom-0 left-0 w-full h-2 z-[60] bg-gradient-to-r from-vermillion via-primary to-vermillion shadow-red-glow"></div>
+<nav class="sticky top-0 z-50 bg-night/95 backdrop-blur-md shadow-2xl border-b-4 border-primary">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-24 items-center">
+<div class="flex-shrink-0 flex items-center space-x-3 group cursor-pointer">
+<div class="relative w-14 h-14">
+<div class="absolute inset-0 bg-primary rounded-full opacity-30 border-2 border-primary-dark border-dashed"></div>
+<div class="absolute inset-1 bg-terracotta rounded-full flex items-center justify-center border-2 border-primary shadow-brass-glow">
+<span class="material-symbols-outlined text-primary text-3xl">temple_hindu</span>
+</div>
+</div>
+<div>
+<h1 class="font-display font-black text-2xl tracking-widest text-primary leading-none drop-shadow-lg">SPIRIT TAROT</h1>
+<span class="font-decorative text-xs tracking-[0.4em] text-ochre font-bold block mt-1 uppercase">Vedic Healer</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-parchment/60 hover:text-primary transition-colors font-display font-semibold text-lg tracking-wide flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm text-vermillion">radio_button_unchecked</span> Home
+                </a>
+<div class="flex flex-col items-center">
+<a class="text-primary font-bold transition-colors font-display text-lg tracking-wide flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm text-vermillion">radio_button_checked</span> Services
+                    </a>
+</div>
+<a class="text-parchment/60 hover:text-primary transition-colors font-display font-semibold text-lg tracking-wide flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm text-vermillion">radio_button_unchecked</span> About
+                </a>
+<a class="btn-ornate px-8 py-2 rounded-sm font-display font-bold text-sm tracking-widest transition-all" href="#">
+                    CONSULT
+                </a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-primary hover:text-parchment">
+<span class="material-symbols-outlined text-4xl">menu_book</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative py-24 lg:py-32 overflow-hidden bg-terracotta border-b-8 border-double border-primary">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/henna.png')] mix-blend-overlay"></div>
+<div class="absolute top-0 right-0 w-80 h-80 bg-primary rounded-full blur-[120px] opacity-40"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-vermillion rounded-full blur-[120px] opacity-40"></div>
+<span class="absolute top-10 right-10 material-symbols-outlined text-9xl text-primary/30">sunny</span>
+<span class="absolute top-20 left-10 material-symbols-outlined text-7xl text-parchment/20">bedtime</span>
+<div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+<div class="inline-flex items-center justify-center gap-4 mb-8">
+<div class="h-[2px] w-16 bg-gradient-to-r from-transparent to-primary"></div>
+<span class="material-symbols-outlined text-6xl text-primary drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">spa</span>
+<div class="h-[2px] w-16 bg-gradient-to-l from-transparent to-primary"></div>
+</div>
+<h2 class="font-display text-7xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-parchment via-primary to-ochre mb-8 tracking-tight filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)]">
+            Karma &amp; Destiny
+        </h2>
+<div class="flex justify-center items-center space-x-6 mb-12">
+<span class="text-primary text-3xl">❖</span>
+<span class="font-decorative text-2xl text-parchment tracking-[0.4em] font-bold border-y-2 border-primary py-2 px-6">THE VEDIC GUIDE</span>
+<span class="text-primary text-3xl">❖</span>
+</div>
+<div class="relative inline-block px-12">
+<span class="absolute top-0 left-0 text-7xl text-primary/40 font-serif">“</span>
+<p class="max-w-3xl mx-auto text-2xl md:text-4xl text-parchment font-display font-medium leading-relaxed drop-shadow-2xl">
+                Like a lamp in a windless place, the disciplined mind remains steady. Discover your path through the ancient wisdom of the stars.
+            </p>
+<span class="absolute bottom-0 right-0 text-7xl text-primary/40 font-serif">”</span>
+</div>
+<div class="mt-16">
+<img alt="peacock" class="mx-auto w-28 filter brightness-110 sepia-[0.3] drop-shadow-[0_0_20px_rgba(184,167,126,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmTM9TIZkaL1uylNI7QNo9z09I8pC_zCx9iU8SyTz4u56zN2Y5LuQG2g3hdWttLPdRKs3uS-ibuhAkYLhdN59CF2B2VIA57qJ3OidmfhPCgRbQUfPk4pnydKGkAGo75OQoAWohzHvLKLyoExlonW4htc4B-P7fDSgM1uWBRaBYavHG-sE4Vu5gMSHjOI3qit7hD5jKNecbYj6IH7l6jEAOf3I8lolrygdxgW_JI3FzYNnrZ2GB39ZOS3nU6m8G4aimutqDLD3wJ-Zz"/>
+</div>
+</div>
+</header>
+<section class="py-20 bg-gradient-to-r from-deep-maroon via-night to-deep-maroon border-y-4 border-primary relative shadow-inner">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] opacity-10"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-primary/30">
+<div class="flex flex-col items-center text-center p-6">
+<div class="w-20 h-20 bg-terracotta rounded-full flex items-center justify-center border-4 border-primary mb-6 shadow-brass-glow">
+<span class="material-symbols-outlined text-4xl text-primary">lock</span>
+</div>
+<h3 class="font-display text-3xl font-bold text-night bg-primary px-4 py-1 rounded border-2 border-primary-dark mb-4 shadow-2xl">Sacred Secrecy</h3>
+<p class="text-xl text-parchment font-body leading-relaxed drop-shadow-md">We honor the sacred bond of silence, ensuring absolute confidentiality.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6">
+<div class="w-20 h-20 bg-terracotta rounded-full flex items-center justify-center border-4 border-primary mb-6 shadow-brass-glow">
+<span class="material-symbols-outlined text-4xl text-primary">psychology_alt</span>
+</div>
+<h3 class="font-display text-3xl font-bold text-night bg-primary px-4 py-1 rounded border-2 border-primary-dark mb-4 shadow-2xl">Vedic Wisdom</h3>
+<p class="text-xl text-parchment font-body leading-relaxed drop-shadow-md">Guidance rooted in ancient traditions, resonating with your soul.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6">
+<div class="w-20 h-20 bg-terracotta rounded-full flex items-center justify-center border-4 border-primary mb-6 shadow-brass-glow">
+<span class="material-symbols-outlined text-4xl text-primary">medication_liquid</span>
+</div>
+<h3 class="font-display text-3xl font-bold text-night bg-primary px-4 py-1 rounded border-2 border-primary-dark mb-4 shadow-2xl">Karmic Remedies</h3>
+<p class="text-xl text-parchment font-body leading-relaxed drop-shadow-md">Practical upayas to harmonize energies and remove obstacles.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-4 sm:px-6 lg:px-8 relative bg-night">
+<div class="absolute inset-0 bg-madhubani-border opacity-30 pointer-events-none"></div>
+<div class="absolute top-0 left-0 w-32 h-full bg-repeat-y bg-[url('https://www.transparenttextures.com/patterns/flower-trail.png')] opacity-10 filter brightness-150"></div>
+<div class="absolute top-0 right-0 w-32 h-full bg-repeat-y bg-[url('https://www.transparenttextures.com/patterns/flower-trail.png')] opacity-10 transform scale-x-[-1] filter brightness-150"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-24">
+<span class="block font-decorative text-primary tracking-[0.6em] text-lg font-black mb-4 drop-shadow-lg">OFFERINGS</span>
+<h2 class="font-display text-6xl md:text-8xl font-extrabold text-parchment mb-6 drop-shadow-[0_5px_15px_rgba(184,167,126,0.2)]">The Spiritual Panchang</h2>
+<div class="flex items-center justify-center gap-6">
+<div class="h-[2px] w-24 bg-primary"></div>
+<span class="material-symbols-outlined text-5xl text-ochre">leaf_spark</span>
+<div class="h-[2px] w-24 bg-primary"></div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-2 gap-20 px-4">
+<div class="pothi-card group">
+<div class="pothi-inner p-10 flex flex-col relative">
+<div class="absolute top-2 left-2 w-10 h-10 border-t-4 border-l-4 border-primary"></div>
+<div class="absolute top-2 right-2 w-10 h-10 border-t-4 border-r-4 border-primary"></div>
+<div class="absolute bottom-2 left-2 w-10 h-10 border-b-4 border-l-4 border-primary"></div>
+<div class="absolute bottom-2 right-2 w-10 h-10 border-b-4 border-r-4 border-primary"></div>
+<div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-vermillion p-4 rounded-full border-4 border-primary shadow-brass-glow z-20">
+<span class="material-symbols-outlined text-5xl text-parchment">visibility</span>
+</div>
+<div class="absolute top-1/2 -left-3 gem-ruby gemstone"></div>
+<div class="absolute top-1/2 -right-3 gem-ruby gemstone"></div>
+<div class="mt-8 text-center mb-8 pb-6 border-b-4 border-terracotta relative">
+<h3 class="text-5xl font-display font-black text-terracotta">Prashna Tarot</h3>
+<span class="block text-lg font-decorative text-primary-dark font-black mt-3 tracking-[0.2em] uppercase">3 Specific Questions</span>
+<span class="absolute bottom-[-14px] left-1/2 transform -translate-x-1/2 text-terracotta text-3xl">❖</span>
+</div>
+<div class="drop-cap text-night text-xl mb-10 flex-grow leading-relaxed font-bold text-justify">
+                        Seek specific guidance for the burning questions in your mind. This focused reading illuminates the immediate path ahead, offering clarity on dilemmas and choices through the divine cards.
+                    </div>
+<div class="bg-primary/20 p-5 border-2 border-primary/40 mb-8 rounded-md">
+<div class="flex justify-between items-center text-lg font-black text-terracotta">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">hourglass_top</span> 20-30 Mins</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">videocam</span> Live Call</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-left bg-night px-6 py-2 border-2 border-primary shadow-2xl">
+<span class="block text-[12px] font-black text-primary uppercase tracking-widest">Dakshina</span>
+<span class="font-display text-3xl text-parchment font-black">₹ 799</span>
+</div>
+<a class="btn-ornate px-10 py-4 text-lg tracking-widest shadow-2xl" href="#how-to-book">Select</a>
+</div>
+</div>
+</div>
+<div class="pothi-card group">
+<div class="pothi-inner p-10 flex flex-col relative">
+<div class="absolute top-2 left-2 w-10 h-10 border-t-4 border-l-4 border-primary"></div>
+<div class="absolute top-2 right-2 w-10 h-10 border-t-4 border-r-4 border-primary"></div>
+<div class="absolute bottom-2 left-2 w-10 h-10 border-b-4 border-l-4 border-primary"></div>
+<div class="absolute bottom-2 right-2 w-10 h-10 border-b-4 border-r-4 border-primary"></div>
+<div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-vermillion p-4 rounded-full border-4 border-primary shadow-brass-glow z-20">
+<span class="material-symbols-outlined text-5xl text-parchment">auto_awesome</span>
+</div>
+<div class="absolute top-1/2 -left-3 gem-emerald gemstone"></div>
+<div class="absolute top-1/2 -right-3 gem-emerald gemstone"></div>
+<div class="mt-8 text-center mb-8 pb-6 border-b-4 border-terracotta relative">
+<h3 class="text-5xl font-display font-black text-terracotta">Mahagyaan Spread</h3>
+<span class="block text-lg font-decorative text-primary-dark font-black mt-3 tracking-[0.2em] uppercase">Full Life Overview</span>
+<span class="absolute bottom-[-14px] left-1/2 transform -translate-x-1/2 text-terracotta text-3xl">❖</span>
+</div>
+<div class="drop-cap text-night text-xl mb-10 flex-grow leading-relaxed font-bold text-justify">
+                        A comprehensive journey into the tapestry of your life. We explore relationships, career (Artha), and spiritual growth (Moksha). This deep dive reveals hidden influences and future cycles.
+                    </div>
+<div class="bg-primary/20 p-5 border-2 border-primary/40 mb-8 rounded-md">
+<div class="flex justify-between items-center text-lg font-black text-terracotta">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">hourglass_top</span> 45-60 Mins</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">videocam</span> Live Call</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-left bg-night px-6 py-2 border-2 border-primary shadow-2xl">
+<span class="block text-[12px] font-black text-primary uppercase tracking-widest">Dakshina</span>
+<span class="font-display text-3xl text-parchment font-black">₹ 1499</span>
+</div>
+<a class="btn-ornate px-10 py-4 text-lg tracking-widest shadow-2xl" href="#how-to-book">Select</a>
+</div>
+</div>
+</div>
+<div class="pothi-card group">
+<div class="pothi-inner p-10 flex flex-col relative">
+<div class="absolute top-2 left-2 w-10 h-10 border-t-4 border-l-4 border-primary"></div>
+<div class="absolute top-2 right-2 w-10 h-10 border-t-4 border-r-4 border-primary"></div>
+<div class="absolute bottom-2 left-2 w-10 h-10 border-b-4 border-l-4 border-primary"></div>
+<div class="absolute bottom-2 right-2 w-10 h-10 border-b-4 border-r-4 border-primary"></div>
+<div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-vermillion p-4 rounded-full border-4 border-primary shadow-brass-glow z-20">
+<span class="material-symbols-outlined text-5xl text-parchment">pentagon</span>
+</div>
+<div class="absolute top-1/2 -left-3 gem-sapphire gemstone"></div>
+<div class="absolute top-1/2 -right-3 gem-sapphire gemstone"></div>
+<div class="mt-8 text-center mb-8 pb-6 border-b-4 border-terracotta relative">
+<h3 class="text-5xl font-display font-black text-terracotta">Ank Jyotish</h3>
+<span class="block text-lg font-decorative text-primary-dark font-black mt-3 tracking-[0.2em] uppercase">Vedic Numerology</span>
+<span class="absolute bottom-[-14px] left-1/2 transform -translate-x-1/2 text-terracotta text-3xl">❖</span>
+</div>
+<div class="drop-cap text-night text-xl mb-10 flex-grow leading-relaxed font-bold text-justify">
+                        The universe speaks in numbers. Decode your birth date to understand your Mulank (Destiny number) and Bhagyank (Life Path). Discover your strengths and align with your lucky vibrations.
+                    </div>
+<div class="bg-primary/20 p-5 border-2 border-primary/40 mb-8 rounded-md">
+<div class="flex justify-between items-center text-lg font-black text-terracotta">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">hourglass_top</span> 60 Mins</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">description</span> Report + Call</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-left bg-night px-6 py-2 border-2 border-primary shadow-2xl">
+<span class="block text-[12px] font-black text-primary uppercase tracking-widest">Dakshina</span>
+<span class="font-display text-3xl text-parchment font-black">₹ 2100</span>
+</div>
+<a class="btn-ornate px-10 py-4 text-lg tracking-widest shadow-2xl" href="#how-to-book">Select</a>
+</div>
+</div>
+</div>
+<div class="pothi-card group">
+<div class="pothi-inner p-10 flex flex-col relative">
+<div class="absolute top-2 left-2 w-10 h-10 border-t-4 border-l-4 border-primary"></div>
+<div class="absolute top-2 right-2 w-10 h-10 border-t-4 border-r-4 border-primary"></div>
+<div class="absolute bottom-2 left-2 w-10 h-10 border-b-4 border-l-4 border-primary"></div>
+<div class="absolute bottom-2 right-2 w-10 h-10 border-b-4 border-r-4 border-primary"></div>
+<div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-vermillion p-4 rounded-full border-4 border-primary shadow-brass-glow z-20">
+<span class="material-symbols-outlined text-5xl text-parchment">spa</span>
+</div>
+<div class="absolute top-1/2 -left-3 gem-ruby gemstone"></div>
+<div class="absolute top-1/2 -right-3 gem-ruby gemstone"></div>
+<div class="mt-8 text-center mb-8 pb-6 border-b-4 border-terracotta relative">
+<h3 class="text-5xl font-display font-black text-terracotta">Mantra &amp; Switch</h3>
+<span class="block text-lg font-decorative text-primary-dark font-black mt-3 tracking-[0.2em] uppercase">Remedies</span>
+<span class="absolute bottom-[-14px] left-1/2 transform -translate-x-1/2 text-terracotta text-3xl">❖</span>
+</div>
+<div class="drop-cap text-night text-xl mb-10 flex-grow leading-relaxed font-bold text-justify">
+                        Powerful modern mantras to switch your energy frequency. Receive personalized words and phrases to chant that reprogram the subconscious mind for health, wealth, and peace.
+                    </div>
+<div class="bg-primary/20 p-5 border-2 border-primary/40 mb-8 rounded-md">
+<div class="flex justify-between items-center text-lg font-black text-terracotta">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">hourglass_top</span> 15-20 Mins</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined font-black">mic</span> Voice Note</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-left bg-night px-6 py-2 border-2 border-primary shadow-2xl">
+<span class="block text-[12px] font-black text-primary uppercase tracking-widest">Dakshina</span>
+<span class="font-display text-3xl text-parchment font-black">₹ 555</span>
+</div>
+<a class="btn-ornate px-10 py-4 text-lg tracking-widest shadow-2xl" href="#how-to-book">Select</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-terracotta relative overflow-hidden" id="how-to-book">
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')]"></div>
+<div class="absolute -left-20 top-20 w-96 h-96 bg-primary opacity-30 rounded-full blur-[100px]"></div>
+<div class="absolute -right-20 bottom-20 w-96 h-96 bg-vermillion opacity-30 rounded-full blur-[100px]"></div>
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-24">
+<h2 class="font-display text-6xl font-black text-parchment mb-6 drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)]">The Path to Guidance</h2>
+<div class="flex items-center justify-center">
+<span class="text-primary text-5xl drop-shadow-lg">⚜</span>
+</div>
+</div>
+<div class="relative py-12">
+<div class="hidden md:block lata-vine border-r-4 border-dashed border-primary/50"></div>
+<div class="space-y-32">
+<div class="flex flex-col md:flex-row items-center justify-between relative group">
+<div class="order-1 md:w-5/12 text-center md:text-right p-10 bg-parchment border-8 border-double border-night rounded-2xl shadow-brass-glow transform rotate-2 transition-all hover:rotate-0 hover:scale-105">
+<div class="absolute -top-6 -right-6 bg-vermillion text-parchment w-14 h-14 flex items-center justify-center rounded-full font-black text-2xl shadow-2xl border-4 border-primary">1</div>
+<h4 class="text-4xl font-display font-black text-terracotta mb-4">Sankalpa (Intention)</h4>
+<p class="text-night font-body text-2xl font-bold">Meditate on your question. Select the service above that calls to your spirit.</p>
+</div>
+<div class="order-2 my-8 md:my-0 flex-shrink-0 relative z-10">
+<div class="w-24 h-24 rounded-full bg-primary border-4 border-parchment shadow-brass-glow flex items-center justify-center">
+<span class="material-symbols-outlined text-night text-5xl font-black">touch_app</span>
+</div>
+</div>
+<div class="order-3 md:w-5/12 hidden md:block"></div>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between relative group">
+<div class="order-1 md:w-5/12 hidden md:block"></div>
+<div class="order-2 my-8 md:my-0 flex-shrink-0 relative z-10">
+<div class="w-24 h-24 rounded-full bg-primary border-4 border-parchment shadow-brass-glow flex items-center justify-center">
+<span class="material-symbols-outlined text-night text-5xl font-black">mail</span>
+</div>
+</div>
+<div class="order-3 md:w-5/12 text-center md:text-left p-10 bg-parchment border-8 border-double border-night rounded-2xl shadow-brass-glow transform -rotate-2 transition-all hover:rotate-0 hover:scale-105">
+<div class="absolute -top-6 -left-6 bg-vermillion text-parchment w-14 h-14 flex items-center justify-center rounded-full font-black text-2xl shadow-2xl border-4 border-primary">2</div>
+<h4 class="text-4xl font-display font-black text-terracotta mb-4">Sampark (Connection)</h4>
+<p class="text-night font-body text-2xl font-bold">Send a message via Instagram or Email. We will align our calendars to find a propitious Muhurta.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between relative group">
+<div class="order-1 md:w-5/12 text-center md:text-right p-10 bg-parchment border-8 border-double border-night rounded-2xl shadow-brass-glow transform rotate-2 transition-all hover:rotate-0 hover:scale-105">
+<div class="absolute -top-6 -right-6 bg-vermillion text-parchment w-14 h-14 flex items-center justify-center rounded-full font-black text-2xl shadow-2xl border-4 border-primary">3</div>
+<h4 class="text-4xl font-display font-black text-terracotta mb-4">Darshan (Revelation)</h4>
+<p class="text-night font-body text-2xl font-bold">
+                            The session commences via <span class="font-black text-vermillion">Voice Call</span>. Dakshina (Payment) is completed to seal the energy exchange.
+                        </p>
+</div>
+<div class="order-2 my-8 md:my-0 flex-shrink-0 relative z-10">
+<div class="w-24 h-24 rounded-full bg-primary border-4 border-parchment shadow-brass-glow flex items-center justify-center">
+<span class="material-symbols-outlined text-night text-5xl font-black">record_voice_over</span>
+</div>
+</div>
+<div class="order-3 md:w-5/12 hidden md:block"></div>
+</div>
+</div>
+</div>
+<div class="mt-32 max-w-4xl mx-auto bg-primary p-2 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+<div class="bg-night rounded-2xl p-14 text-center border-4 border-double border-primary/50 relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-20"></div>
+<div class="relative z-10">
+<h3 class="font-display text-4xl text-primary mb-12 tracking-widest uppercase font-black drop-shadow-2xl">Begin Your Journey</h3>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-10">
+<a class="flex items-center group bg-parchment/10 px-10 py-5 rounded-full hover:bg-parchment/20 transition-all border-2 border-primary/50 shadow-2xl hover:shadow-brass-glow" href="https://instagram.com" target="_blank">
+<span class="text-4xl mr-4 drop-shadow-2xl">📸</span>
+<div class="text-left">
+<span class="block text-sm uppercase tracking-widest text-primary font-black">Instagram DM</span>
+<span class="font-black text-xl text-parchment group-hover:text-primary transition-colors">@mindofwallflower</span>
+</div>
+</a>
+<a class="flex items-center group bg-parchment/10 px-10 py-5 rounded-full hover:bg-parchment/20 transition-all border-2 border-primary/50 shadow-2xl hover:shadow-brass-glow" href="mailto:idhruvabhatt@gmail.com">
+<span class="material-symbols-outlined text-4xl text-parchment mr-4 drop-shadow-2xl">mark_email_unread</span>
+<div class="text-left">
+<span class="block text-sm uppercase tracking-widest text-primary font-black">Email Inquiry</span>
+<span class="font-black text-xl text-parchment group-hover:text-primary transition-colors">idhruvabhatt@gmail.com</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-night border-t-8 border-double border-primary mt-auto relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/henna.png')] opacity-10"></div>
+<div class="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center relative z-10">
+<div class="flex justify-center space-x-8 mb-10">
+<div class="w-24 h-24 bg-terracotta rounded-full flex items-center justify-center border-2 border-primary shadow-brass-glow">
+<span class="material-symbols-outlined text-primary text-6xl drop-shadow-2xl">self_improvement</span>
+</div>
+</div>
+<h2 class="font-display font-black text-4xl tracking-[0.4em] text-primary mb-6 drop-shadow-[0_5px_10px_rgba(0,0,0,0.5)]">SPIRIT TAROT HEALER</h2>
+<div class="w-32 h-2 bg-gradient-to-r from-transparent via-vermillion to-transparent mx-auto mb-10"></div>
+<div class="mt-12 pt-12 border-t border-primary/20 max-w-3xl mx-auto">
+<p class="text-2xl text-parchment/80 font-body italic mb-10 leading-relaxed">
+                "As is the atom, so is the universe. As is the microcosm, so is the macrocosm."
+            </p>
+<div class="flex justify-center gap-8 text-primary mb-10">
+<span class="material-symbols-outlined text-3xl">star</span>
+<span class="material-symbols-outlined text-3xl">moon_stars</span>
+<span class="material-symbols-outlined text-3xl">sunny</span>
+</div>
+<p class="text-sm text-ochre mt-6 uppercase tracking-[0.3em] font-black">
+                © 2023 Spirit Tarot Healer. All rights reserved.
+            </p>
+</div>
+</div>
+</footer>
+
+</body></html>
