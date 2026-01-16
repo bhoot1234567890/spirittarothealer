@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Test Heading Clipping - Simple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        .font-script { font-family: 'Great Vibes', cursive; }
+        .font-decorative { font-family: 'Cinzel', serif; }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen p-10">
+
+    <!-- TEST A: Solid text - no gradient -->
+    <div class="bg-red-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">TEST A: Solid text (no gradient clip)</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-yellow-500 leading-none">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST B: Gradient text with clip -->
+    <div class="bg-blue-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">TEST B: Gradient text with bg-clip-text</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST C: Gradient text with explicit height -->
+    <div class="bg-green-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">TEST C: Gradient text with min-height</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none min-h-[120px]">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST D: Without leading-none -->
+    <div class="bg-purple-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">TEST D: Gradient text WITHOUT leading-none</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST E: With overflow-visible on parent -->
+    <div class="bg-orange-900 p-10 mb-10 overflow-visible">
+        <h1 class="text-2xl text-white mb-4">TEST E: With overflow-visible on parent div</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST F: Checking if the element above is overlapping -->
+    <div class="bg-pink-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">TEST F: With margin-top on heading</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none mt-10">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST G: Is it the card animation? -->
+    <div class="bg-indigo-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">TEST G: With MORE margin - mb-20</h1>
+        <div class="flex justify-center items-center gap-6 mb-20">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- Border visualization -->
+    <div class="bg-teal-900 p-10 mb-10 border-4 border-red-500">
+        <h1 class="text-2xl text-white mb-4">TEST H: With borders to visualize overlap</h1>
+        <div class="flex justify-center items-center gap-6 mb-10 border-2 border-yellow-400">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center border-2 border-white">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none border-2 border-green-400">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+</body>
+</html>

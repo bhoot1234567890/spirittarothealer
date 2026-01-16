@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Test Heading Clipping - FIX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        .font-script { font-family: 'Great Vibes', cursive; }
+        .font-decorative { font-family: 'Cinzel', serif; }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen p-10">
+
+    <!-- FIX 1: Add text-shadow (transparent) -->
+    <div class="bg-red-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 1: Add text-shadow (transparent fallback)</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none" style="-webkit-text-stroke: 0.5px transparent;">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- FIX 2: Using -webkit-text-stroke with transparent -->
+    <div class="bg-blue-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 2: -webkit-text-stroke transparent</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none" style="-webkit-text-stroke: 1px rgba(255,255,255,0.1);">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- FIX 3: Adding padding-top -->
+    <div class="bg-green-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 3: Add padding-top to h2</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none pt-4">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- FIX 4: Remove leading-none, use normal line-height -->
+    <div class="bg-purple-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 4: Use leading-tight instead of leading-none</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-tight">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- FIX 5: Add transform-style -->
+    <div class="bg-orange-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 5: Add transform-style: preserve-3d</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none" style="transform-style: preserve-3d;">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- FIX 6: Use pseudo-element approach -->
+    <div class="bg-pink-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 6: Wrapper with margin-bottom instead of h2 margin</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <div class="mb-8">
+            <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none">
+                Spirit Tarot Healer
+            </h2>
+        </div>
+    </div>
+
+    <!-- FIX 7: The most likely fix - proper line-height -->
+    <div class="bg-indigo-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 7: Remove leading-none entirely (default line-height)</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- FIX 8: Check if tracking-tight is causing it -->
+    <div class="bg-teal-900 p-10 mb-10">
+        <h1 class="text-2xl text-white mb-4">FIX 8: Remove tracking-tight</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 leading-none">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+</body>
+</html>

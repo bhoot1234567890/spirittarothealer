@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Test Heading Clipping</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        .font-script { font-family: 'Great Vibes', cursive; }
+        .font-decorative { font-family: 'Cinzel', serif; }
+
+        /* Floating Animation */
+        .floating-cards {
+            animation: floatCards 8s ease-in-out infinite;
+        }
+
+        @keyframes floatCards {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+            50% {
+                transform: translateY(-5px) rotate(-1deg);
+            }
+            75% {
+                transform: translateY(-12px) rotate(1deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen">
+
+    <!-- TEST 1: Basic setup -->
+    <div class="p-10 bg-red-900">
+        <h1 class="text-4xl text-white">TEST 1: Basic - No z-index manipulation</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center floating-cards">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST 2: With overflow-hidden on container -->
+    <div class="p-10 bg-blue-900 mt-10 overflow-hidden">
+        <h1 class="text-4xl text-white">TEST 2: Container with overflow-hidden</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center floating-cards">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST 3: With filter on heading -->
+    <div class="p-10 bg-green-900 mt-10">
+        <h1 class="text-4xl text-white">TEST 3: With filter on heading</h1>
+        <div class="flex justify-center items-center gap-6 mb-10">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center floating-cards">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST 4: With z-index stacking -->
+    <div class="p-10 bg-purple-900 mt-10 relative z-10">
+        <h1 class="text-4xl text-white">TEST 4: With z-index stacking</h1>
+        <div class="flex justify-center items-center gap-6 mb-10 relative z-0">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center floating-cards">☾</div>
+        </div>
+        <h2 class="font-script text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 relative z-50">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+    <!-- TEST 5: Closest to original -->
+    <div class="p-10 bg-orange-900 mt-10 relative z-10 overflow-visible">
+        <h1 class="text-4xl text-white">TEST 5: Closest to original structure</h1>
+        <div class="flex justify-center items-center gap-6 mb-10 relative z-0 overflow-visible">
+            <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center floating-cards">☾</div>
+        </div>
+        <h2 class="font-script text-7xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 via-yellow-500 to-red-600 tracking-tight relative z-50">
+            Spirit Tarot Healer
+        </h2>
+    </div>
+
+</body>
+</html>
