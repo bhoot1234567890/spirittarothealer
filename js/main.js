@@ -505,14 +505,15 @@ class App {
 }
 
 // ===================================
-// Export for Module Usage
+// Initialize Application (Traditional Script Tag)
 // ===================================
 
-// If using modules
-export { App, TAILWIND_CONFIG };
-
-// If using traditional script tag
+// Initialize for traditional script tag usage
 if (typeof window !== 'undefined') {
     window.SpiritTarotApp = new App();
     window.SpiritTarotApp.init();
 }
+
+// Note: For ES6 modules, use type="module" in script tag and uncomment below:
+// export { App, TAILWIND_CONFIG };
+
